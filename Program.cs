@@ -11,7 +11,7 @@ namespace BinarySearchTree
         static void Main(string[] args)
         {
             //Displaying Welcome Message
-            Console.WriteLine("Welcome To The Binary Search Tree Program");
+            Console.WriteLine("Welcome To The Binary Search Tree Program\n");
 
             //Creating binary search tree to insert and display node values(UC1)
             BinarySearchTree<int> binaryTree = new BinarySearchTree<int>(56);
@@ -25,14 +25,17 @@ namespace BinarySearchTree
             binaryTree.Insert(65);
             binaryTree.Insert(3);
             binaryTree.Insert(16);
-            binaryTree.Insert(06);
+            binaryTree.Insert(6);
             binaryTree.Insert(67);
             //Display inputs
-            Console.WriteLine("Created A Binary Search Tree");
+            Console.WriteLine("Created A Binary Search Tree : ");
             binaryTree.Display();
 
             //get size ot BST
             binaryTree.GetSIze();
+
+            bool result = binaryTree.IfValueExists(63, binaryTree);
+            Console.WriteLine(result);
             Console.ReadLine();
         }
     }
