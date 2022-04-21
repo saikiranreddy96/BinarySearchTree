@@ -24,7 +24,6 @@ namespace BinarySearchTree
             this.leftTree = null;
             this.rightTree = null;
         }
-
         //Method to check node and add node value to left or right by comparing
         public void Insert(T data)
         {
@@ -34,18 +33,26 @@ namespace BinarySearchTree
                 if (this.leftTree == null)
                 {
                     this.leftTree = new BinarySearchTree<T>(data);
+                    leftCount++;
                 }
                 else
+                { 
                     this.leftTree.Insert(data);
+                    leftCount++;
+                }
             }
             else
             {
                 if (this.rightTree == null)
                 {
                     this.rightTree = new BinarySearchTree<T>(data);
+                    rightCount++;
                 }
                 else
+                { 
                     this.rightTree.Insert(data);
+                    rightCount++;
+                }
             }
         }
 
@@ -54,15 +61,17 @@ namespace BinarySearchTree
         {
             if (this.leftTree != null)
             {
-                leftCount++;
                 this.leftTree.Display();
             }
             Console.Write(this.nodeData.ToString() + " ");
             if (this.rightTree != null)
             {
-                rightCount++;
                 this.rightTree.Display();
             }
+        }
+        public void GetSIze()
+        {
+            Console.WriteLine("\nSize of Binary Tree is : " + (this.leftCount + this.rightCount + 1 ));
         }
     }
 }
